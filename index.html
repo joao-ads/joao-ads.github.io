@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 
+        --Indice dos requisitos:
+        --Jquery : utilizar um scroll que a partir de  400px
+        do topo do body apareça uma seta ao lado direito da 
+        pagina que funciona como retorno suave para o inicio 
+        da pagina , aplicar essa função na pagina inicial do 
+        projeto.
+        --JavaScript: validações.
+        --Css: Estilizar o rodapé usando exclusivamente css.
+        --HTML: Utilizar <aside> e <article>
+        --BootStrap:
+        *Layout responsivo usando grid 
+        *formulário 
+        *menu drop-down/nav-bar responsivo
+        *Estilo nos botões e texto 
+        --Requisitos do projeto : 
+        *Site formado com 4 páginas (mínimo) 6 (máximo): 
+        01 - Pagina inicial , 02 - Quem somos/Sobre Nós , 
+        03 - Formulário e 04 - Parceiros ou Serviços;
+        *Utilizar a paleta de cores do cliente, podendo mudar
+        os tons apenas nas variações das cores base;
+        *Utilizar prioritariamente logos e arquivos do cliente 
+        (prioritariamente) , caso o cliente não disponha pode 
+        utilizar mídia genérica baseada no negocio do cliente .
+        *O cliente pode fornecer ideias adicionais para o projeto
+        mas as partes obrigatórias são as contempladas nos 
+        requisitos aqui apresentados , caso tenha atendido a 
+        todos e seja viável implementar extras assim o faça.
+     -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Eletro</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="./libs/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+
+    <!-- Estilo próprio -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./img/logo_novo1.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <!-- Modal -->
+    <article class="modal fade" id="modalLogin" data-backdrop="static" data-keyboard="false" tabindex="-1"
+        aria-labelledby="modalLoginTitulo" aria-hidden="true">
+        <article class="modal-dialog">
+            <article class="modal-content">
+                <article class="modal-header">
+                    <h5 class="modal-title" id="modalLoginTitulo">Entre na Sua Conta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </article>
+                <article class="modal-body">
+                    <form>
+                        <article class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" class="form-control" id="loginEmail">
+                        </article>
+                        <article class="form-group">
+                            <label for="loginSenha">Senha</label>
+                            <input type="password" class="form-control" id="loginSenha">
+                        </article>
+                        <button type="submit" class="btn btn-primary">Entrar na Conta</button>
+                        <small class="form-text text-muted">Esqueceu a senha? <a href="#">Clique aqui.</a></small>
+                    </form>
+                </article>
+            </article>
+        </article>
+    </article>
+
+    <!-- Header -->
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light py-3 box-shadow">
+            <a href="index.html" class="navbar-brand">
+                <img src="img/logo_novo1.png" alt="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <section class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Locais</a>
+                        <section class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">São Paulo</a>
+                            <a class="dropdown-item" href="#">Paraiba</a>
+                            <a class="dropdown-item" href="#">Pernambuco</a>
+                            <a class="dropdown-item" href="#">Bahia</a>
+                            <a class="dropdown-item" href="#">Minas Gerais</a>
+                        </section>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./sobre.html">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./parceiros.html">Paceiros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#modalLogin">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-info ml-md-2" href="./inscreva.html">Cadastre-se</a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </header>
+
+    <!-- Inicio do main -->
+    <main>
+        <!-- slider -->
+        <section id="mainSlider" class="carousel slide p-2 box-shadow" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#mainSlider" data-slide-to="1"></li>
+                <li data-target="#mainSlider" data-slide-to="2"></li>
+            </ol>
+            <section class="carousel-inner">
+
+                <section class="carousel-item active">
+                    <img src="img/banner1.png" class="d-block w-100" alt="banner1">
+                </section>
+
+                <section class="carousel-item">
+                    <img src="img/banner2.png" class="d-block w-100" alt="banner2">
+                </section>
+
+                <section class="carousel-item">
+                    <img src="img/banner3.png" class="d-block w-100" alt="banner3">
+                </section>
+
+            </section>
+
+            <a class="carousel-control-prev" href="#mainSlider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <a class="carousel-control-next" href="#mainSlider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </section>
+
+        <!-- Cards -->
+
+        <aside class="bg-light text-center">
+            <section class="container py-1">
+                <span class="h6 d-block pt-4">MELHORES PRODUTOS ELETRODOMÉSTICOS PARA VOCÊ</span>
+                <h2 class="display-4 text-primary">Aproveite as vantagens</h2>
+
+                <br>
+
+                <sention id="box">
+                    <sention class="row">
+                        <sention class="col-12 pb-3">
+                            <h3>Produtos Mais Visitados</h3>
+                        </sention>
+                        <sention class="col-md-3">
+                            <sention class="card box-shadow">
+                                <img src="img/geladeira2.png" class="card-img" alt="Imagem de Perfil 1">
+                                <sention class="card-body">
+                                    <h5 class="card-title">Geladeira Brastemp Inverse</h5>
+                                    <b>
+                                        <p class="card-text text-primary pb-1">Por R$ 4.149,00</p>
+                                    </b>
+                                    <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-check"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg> Carrinho</a>
+                                </sention>
+                            </sention>
+                        </sention>
+                        <sention class="col-md-3">
+                            <sention class="card box-shadow">
+                                <img src="img/geladeira3.png" class="card-img-top" alt="Imagem de Perfil 2">
+                                <sention class="card-body">
+                                    <h5 class="card-title">Geladeira Brastemp Convencional</h5>
+                                    <b>
+                                        <p class="card-text text-primary pb-1">Por R$ 2.650,00</p>
+                                    </b>
+                                    <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-check"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg> Carrinho</a>
+                                </sention>
+                            </sention>
+                        </sention>
+                        <sention class="col-md-3">
+                            <sention class="card box-shadow">
+                                <img src="img/lavalouca.png" class="card-img-top" alt="Imagem de Perfil 3">
+                                <sention class="card-body">
+                                    <h5 class="card-title">Lava-louça <br> Brastemp</h5>
+                                    <b>
+                                        <p class="card-text text-primary pb-1">Por R$ 2.095,00</p>
+                                    </b>
+                                    <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-check"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg> Carrinho</a>
+                                </sention>
+                            </sention>
+                        </sention>
+                        <sention class="col-md-3">
+                            <sention class="card box-shadow">
+                                <img src="img/microondas.png" class="card-img-top" alt="Imagem de Perfil 3">
+                                <sention class="card-body">
+                                    <h5 class="card-title">Forno de Micro-ondas <br> Electrux</h5>
+                                    <b>
+                                        <p class="card-text text-primary pb-1">Por R$ 599,00</p>
+                                    </b>
+                                    <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-cart-check"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                            <path
+                                                d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                        </svg> Carrinho</a>
+                                </sention>
+                            </sention>
+                        </sention>
+                    </sention>
+                </sention>
+            </section>
+
+            <section class="container">
+                <sention class="col-12 pb-3">
+                    <h3>Produtos Mais Vendidos</h3>
+                </sention>
+                <section class="row">
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="img/fornoeletrico.png" class="card-img" alt="Imagem de Perfil 1">
+                            <sention class="card-body">
+                                <h5 class="card-title">Cooktop a Gás Brastemp</h5>
+                                <b>
+                                    <p class="card-text text-primary pb-1">Por R$ 929,00</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="img/tanquinho.png" class="card-img-top" alt="Imagem de Perfil 2">
+                            <sention class="card-body">
+                                <h5 class="card-title">Lavadora de Roupas Consul</h5>
+                                <b>
+                                    <p class="card-text text-primary pb-1">Por R$ 1.348,00</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="img/tanquinho2.png" class="card-img-top" alt="Imagem de Perfil 3">
+                            <sention class="card-body">
+                                <h5 class="card-title">Lavadora de Roupas Eletrolux</h5>
+                                <b>
+                                    <p class="card-text text-primary pb-1">Por R$ 1.799,00</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="img/tanquinho3.png" class="card-img-top" alt="Imagem de Perfil 3">
+                            <sention class="card-body">
+                                <h5 class="card-title">Lava e Seca LG com Interligência</h5>
+                                <b>
+                                    <p class="card-text text-primary pb-1">Por R$ 3.599,00</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                </section>
+                </sention>
+            </section>
+
+            <section class="container">
+                <sention class="col-12 pb-3">
+                    <h3>Ofertas Imperdíveis</h3>
+                </sention>
+                <section class="row">
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="./img/tv1.png" class="card-img" alt="Imagem de Perfil 1">
+                            <sention class="card-body">
+                                <h5 class="card-title">Tv 50" Philips led Smart</h5>
+                                <b>
+                                    <del>De R$ 5.000,00</del>
+                                    <p class="card-text text-primary pb-1">Por R$ 3.002,89</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="./img/tv2.png" class="card-img-top" alt="Imagem de Perfil 2">
+                            <sention class="card-body">
+                                <h5 class="card-title">TV 50" AOC LED Smart</h5>
+                                <b>
+                                    <del>De 3.115,90</del>
+                                    <p class="card-text text-primary pb-4">Por R$ 2.650,00</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="./img/tv3.png" class="card-img-top" alt="Imagem de Perfil 3">
+                            <sention class="card-body">
+                                <h5 class="card-title">Tv 50" Semp led Smart 4k</h5>
+                                <b>
+                                    <del>De R$ 6.290,00</del>
+                                    <p class="card-text text-primary pb-1">Por R$ 5.919,80</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                    <sention class="col-md-3">
+                        <sention class="card box-shadow">
+                            <img src="./img/tv4.png" class="card-img-top" alt="Imagem de Perfil 3">
+                            <sention class="card-body">
+                                <h5 class="card-title">TV 65" LG Led Smart Wifi 4k</h5>
+                                <b>
+                                    <del>De 7.000,00</del>
+                                    <p class="card-text text-primary pb-1"> Por R$ 5.199,99</p>
+                                </b>
+                                <a href="#" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                        height="16" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                                        <path
+                                            d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                                        <path
+                                            d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                                    </svg> Carrinho</a>
+                            </sention>
+                        </sention>
+                    </sention>
+                </section>
+                </sention>
+            </section>
+        </aside>
+
+        <!-- botão de subir -->
+        <a href="#" id="goTotop"><i class="fas fa-chevron-circle-up"></i></a>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <!-- Fazer um flex com 3 colunas justificadas com insformações logo e em baixo o copy -->
+
+        <section class="footer_logo quarter">
+            <img src="img/logo_novo1.png" alt="Logo">
+        </section>
+
+        <section class="quarter">
+            <article>
+                <ul>
+                    <h3>Entrem contato Telefone fixo</h3>
+                    <h6><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-telephone-inbound-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM15.854.146a.5.5 0 0 1 0 .708L11.707 5H14.5a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 1 0v2.793L15.146.146a.5.5 0 0 1 .708 0z" />
+                        </svg> +55 (11) 9999-7777</h6>
+                    <h4>ou chama no Zap</h4>
+                    <li class="row">
+                        <a class="tenth" href="https://api.whatsapp.com/send?phone=5511954798878" target="blank"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="quarter">
+            <h3>Siga-nos nas redes sociais</h3>
+            <ul>
+                <li class="row">
+                    <a class="tenth " href="https://www.linkedin.com/company/soulcodeacademy/mycompany/"
+                        target="_blank"><img src="./img/linkedinicon.png" alt=""></a>
+                    <a class="tenth " href="https://www.instagram.com/soulcodeacademy/" target="_blank"><img
+                            src="./img/instagramicon.png" alt=""></a>
+                    <a class="tenth " href="https://tiktok.com/" target="_blank"><img src="./img/tiktok redondo.png"
+                            alt=""></a>
+                    <a class="tenth " href="https://www.facebook.com/SoulCodeAcademy/" target="_blank"><img
+                            src="./img/facebook-circular-logo.png" alt=""></a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h5>Visite a nossa central SP</h5>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.3716932779166!2d-46.677907385384145!3d-23.555090467245062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57806e5988d9%3A0xa38687ec90914aa3!2sR.%20Oscar%20Freire%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1630283806370!5m2!1spt-BR!2sbr" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy">Viz</iframe>
+        </section>
+    </footer>
+
+    <section class="copyright">
+        <b>
+            <p>Rua Oscar Freire, 00 - Cerqueira César, São Paulo - SP, 01426-001 | &copy João Eletro .LTDA | todos os
+                direitos reservados </p>
+        </b>
+    </section>
+
+    <!-- Libras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script id="libras" src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <!-- jQuery -->
+    <script src="./libs/jquery-3.6.0.js"></script>
+    <!-- BootStrap-->
+    <script src="./libs/bootstrap-4.6.0-dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="./libs/fontawesome.bf7e05c402.js"></script>
+
+    <!-- Script próprio -->
+    <script src="./js/script.js"></script>
+
+
+
+
+
+</body>
+
+</html>
